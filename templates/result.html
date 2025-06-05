@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 90%;
+            max-width: 500px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #34495e;
+        }
+
+        .prediction {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            margin-top: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #3498db;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #1d6fa5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Prediction Result 🧠</h2>
+        <p class="prediction">The image is classified as: <strong>{{ prediction }}</strong></p>
+        <img src="{{ url_for('static', filename='uploads/' + image_name) }}" alt="Uploaded Image">
+        <br><br>
+        <a href="/">🔙 Go Back</a>
+    </div>
+</body>
+</html>
